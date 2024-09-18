@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="اشرحلي - منصة تعليمية لشرح المفاهيم الصعبة بالعربي المصري البسيط">
+    <meta property="og:title" content="اشرحلي - تعلم بسهولة بالعربي المصري">
+    <meta property="og:description" content="منصة تعليمية لشرح المفاهيم الصعبة بالعربي المصري البسيط">
+    <meta property="og:image" content="{{ url_for('static', filename='img/og-image.jpg') }}">
+    <meta property="og:url" content="{{ request.url }}">
     <title>اشرحلي - {% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -11,25 +17,33 @@
         body {
             font-family: 'Cairo', sans-serif;
         }
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
-    <nav class="bg-yellow-400 p-4">
+    <nav class="bg-blue-500 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="{{ url_for('index') }}" class="text-2xl font-bold text-gray-800">اشرحلي</a>
+            <a href="{{ url_for('index') }}" class="flex items-center">
+                <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="اشرحلي" class="h-8 w-auto">
+            </a>
             <div>
                 {% if current_user.is_authenticated %}
-                    <a href="{{ url_for('dashboard') }}" class="text-gray-800 hover:text-gray-600 mr-4">
+                    <a href="{{ url_for('dashboard') }}" class="text-white hover:text-gray-200 mr-4 transition duration-300">
                         <i class="fas fa-user-circle mr-1"></i>لوحة التحكم
                     </a>
-                    <a href="{{ url_for('logout') }}" class="text-gray-800 hover:text-gray-600">
+                    <a href="{{ url_for('logout') }}" class="text-white hover:text-gray-200 transition duration-300">
                         <i class="fas fa-sign-out-alt mr-1"></i>تسجيل الخروج
                     </a>
                 {% else %}
-                    <a href="{{ url_for('login') }}" class="text-gray-800 hover:text-gray-600 mr-4">
+                    <a href="{{ url_for('login') }}" class="text-white hover:text-gray-200 mr-4 transition duration-300">
                         <i class="fas fa-sign-in-alt mr-1"></i>تسجيل الدخول
                     </a>
-                    <a href="{{ url_for('register') }}" class="text-gray-800 hover:text-gray-600">
+                    <a href="{{ url_for('register') }}" class="text-white hover:text-gray-200 transition duration-300">
                         <i class="fas fa-user-plus mr-1"></i>التسجيل
                     </a>
                 {% endif %}
@@ -37,7 +51,7 @@
         </div>
     </nav>
 
-    <main class="container mx-auto mt-8 px-4">
+    <main class="container mx-auto mt-12 px-4">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
@@ -51,7 +65,7 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="bg-gray-200 text-center p-4 mt-8">
+    <footer class="bg-gray-200 text-center p-6 mt-12">
         <p>© 2023 اشرحلي. جميع الحقوق محفوظة.</p>
     </footer>
 
