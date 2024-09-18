@@ -4,29 +4,29 @@
 
 {% block content %}
 <div class="max-w-3xl mx-auto">
-    <h1 class="text-3xl font-bold mb-8">أهلا، {{ current_user.username }}!</h1>
+    <h1 class="text-3xl font-bold mb-8 animate-slideInFromBottom">أهلا، {{ current_user.username }}!</h1>
     
-    <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-        <h2 class="text-2xl font-bold mb-6"><i class="fas fa-question-circle text-blue-500 mr-2"></i>اطلب شرح</h2>
+    <div class="bg-white p-8 rounded-lg shadow-md mb-8 animate-fadeIn">
+        <h2 class="text-2xl font-bold mb-6 animate-slideInFromBottom"><i class="fas fa-question-circle text-blue-500 mr-2"></i>اطلب شرح</h2>
         <div class="mb-6">
             <label for="topic" class="block text-gray-700 text-sm font-bold mb-2">اكتب الموضوع اللي عايز تفهمه:</label>
             <input type="text" id="topic" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="مثال: عملية البناء الضوئي">
         </div>
-        <button id="explainBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+        <button id="explainBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 animate-slideInFromBottom">
             <i class="fas fa-lightbulb mr-2"></i>اشرحلي
         </button>
     </div>
 
-    <div id="explanationContainer" class="bg-white p-8 rounded-lg shadow-md hidden">
+    <div id="explanationContainer" class="bg-white p-8 rounded-lg shadow-md hidden animate-fadeIn">
         <h3 class="text-xl font-bold mb-4"><i class="fas fa-book-open text-blue-500 mr-2"></i>الشرح:</h3>
         <p id="explanation" class="text-gray-700"></p>
     </div>
 
     {% if not current_user.subscribed %}
-    <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-6 mt-8 rounded-lg" role="alert">
+    <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-6 mt-8 rounded-lg animate-fadeIn" role="alert">
         <p class="font-bold mb-2"><i class="fas fa-star mr-2"></i>اشترك دلوقتي!</p>
         <p class="mb-4">احصل على شرح غير محدود بـ 100 جنيه بس في الشهر.</p>
-        <button id="subscribeBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+        <button id="subscribeBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 animate-slideInFromBottom">
             <i class="fas fa-crown mr-2"></i>اشترك
         </button>
     </div>
@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
             explanationText.textContent = data.explanation;
             explanationContainer.classList.remove('hidden');
+            explanationContainer.classList.add('animate-fadeIn');
         } catch (error) {
             console.error('خطأ:', error);
             alert('حدث خطأ أثناء جلب الشرح. من فضلك حاول مرة أخرى.');
