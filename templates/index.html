@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="text-4xl font-bold mb-4">Welcome to Ashrhly</h1>
+    <p class="text-xl mb-8">Learn complex concepts in simplified Egyptian Arabic</p>
+    <a href="{{ url_for('register') }}" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-2 px-4 rounded">
+        Get Started
+    </a>
+</div>
+{% endblock %}

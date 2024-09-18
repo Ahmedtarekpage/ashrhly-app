@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6">Welcome, {{ current_user.username }}!</h1>
+    
+    <div class="bg-white p-6 rounded shadow-md mb-6">
+        <h2 class="text-xl font-bold mb-4">Ask for an Explanation</h2>
+        <div class="mb-4">
+            <label for="topic" class="block text-gray-700 text-sm font-bold mb-2">Enter a topic:</label>
+            <input type="text" id="topic" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., Photosynthesis">
+        </div>
+        <button id="explainBtn" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            اشرحلي (Explain to me)
+        </button>
+    </div>
+
+    <div id="explanationContainer" class="bg-white p-6 rounded shadow-md hidden">
+        <h3 class="text-lg font-bold mb-2">Explanation:</h3>
+        <p id="explanation" class="text-gray-700"></p>
+    </div>
+
+    {% if not current_user.subscribed %}
+    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mt-6" role="alert">
+        <p class="font-bold">Subscribe Now!</p>
+        <p>Get unlimited access to explanations for only 100 EGP per month.</p>
+        <button id="subscribeBtn" class="mt-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Subscribe
+        </button>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const explainBtn = document.getElementById('explainBtn');
+    const topicInput = document.getElementById('topic');
+    const explanationContainer = document.getElementById('explanationContainer');
+    const explanationText = document.getElementById('explanation');
+    const subscribeBtn = document.getElementById('subscribeBtn');
+
+    explainBtn.addEventListener('click', async function() {
+        const topic = topicInput.value.trim();
+        if (!topic) return;
+
+        try {
+            const response = await fetch('/api/explain', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ topic }),
+            });
+
+            if (!response.ok) throw new Error('Failed to get explanation');
+
+            const data = await response.json();
+            explanationText.textContent = data.explanation;
+            explanationContainer.classList.remove('hidden');
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while fetching the explanation. Please try again.');
+        }
+    });
+
+    if (subscribeBtn) {
+        subscribeBtn.addEventListener('click', async function() {
+            try {
+                const response = await fetch('/subscribe', { method: 'POST' });
+                if (!response.ok) throw new Error('Failed to subscribe');
+
+                const data = await response.json();
+                alert(data.message);
+                location.reload();
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while processing your subscription. Please try again.');
+            }
+        });
+    }
+});
+</script>
+{% endblock %}
