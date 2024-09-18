@@ -1,0 +1,88 @@
+Ashrhly: Comprehensive Online Tutoring Platform
+Overview:
+
+"Ashrhly" is an online tutoring platform that simplifies complex concepts for teenagers using Egyptian colloquial Arabic. Users can input any topic, and the platform provides easy-to-understand explanations tailored specifically for this demographic.
+
+Core Features:
+1. User Authentication:
+Registration:
+Sign up using email with fields for username, email, and password confirmation.
+Option to register with a phone number, including a verification process for security.
+Login:
+Registered users can log in using either email or phone number and password.
+"Remember Me" feature for easier access on future visits.
+Password Recovery:
+A "Forgot Password" option that allows users to reset their password via email.
+2. Main Page (Dashboard):
+Simplified Interface:
+
+Clean, intuitive design that encourages user interaction.
+A prominent text input field where users can type in the topic or concept they need explained.
+"اشرحلي" ("Explain to me") button to submit queries without reloading the page.
+Display of Explanation:
+
+After submitting a query, the explanation appears below the input field in both text and audio formats.
+A 3D FBX model is integrated above the chatbox that verbally explains the concept, making learning more engaging.
+3. Backend Functionality:
+AI Integration:
+Utilizes OpenAI's GPT API to generate tailored explanations based on user input.
+Specific prompt used:
+اشرح لمراهقين [user_input] بالمصريه العاميه و يكون مبسط ليهم علشان يقدروا يفهموا المبدا الصعب ده
+Ensures responses are appropriate for teenagers, using Egyptian colloquial Arabic.
+API Optimization:
+Caches recent queries to improve performance and handles API rate limits gracefully.
+4. Subscription and Payment System:
+Subscription Packages:
+
+Monthly subscription priced at 100 EGP.
+Provides unlimited access to explanations for subscribers.
+Trial Period:
+
+5-day free trial with limited queries per day, giving new users a taste of the service before committing to a subscription.
+Payment Integration:
+
+Integrates with local payment gateways (Fawry, Vodafone Cash) and international options (credit cards, PayPal).
+Fully PCI-compliant to ensure secure handling of payment information.
+Subscription Management:
+
+Users can view their current subscription status, easily renew or cancel, and receive email notifications for upcoming renewals or payment issues.
+Additional Features for a Modern and Professional Platform:
+1. User Settings Page:
+Profile Management:
+
+Users can update personal information (name, email, phone number) and change their password.
+Preference Settings:
+
+Switch between light and dark mode.
+Language settings for future multilingual support.
+Subscription Details:
+
+View current subscription, renewal date, billing history, and invoices.
+2. Responsive Design:
+Mobile-Friendly Interface:
+Optimized for various screen sizes using responsive frameworks like Bootstrap or Tailwind CSS.
+Performance Optimization:
+Implements lazy loading for faster content delivery.
+Uses minified CSS and JavaScript for improved performance.
+Leverages a CDN for quick access to static assets globally.
+3. Modern UI/UX Elements:
+Animations and Transitions:
+
+Subtle effects like button hover animations and loading spinners to enhance user interaction.
+Typography:
+
+Clean, web-safe fonts with support for Arabic characters, ensuring readability with appropriate font sizes and line spacing.
+Color Scheme:
+
+Bright and modern color palettes, like #fee459 yellow for a warm, engaging feel.
+4. Security Enhancements:
+HTTPS Everywhere:
+Ensures SSL encryption site-wide for secure data transmission.
+Input Validation:
+Sanitizes user inputs to prevent attacks like SQL injection and XSS.
+Rate Limiting:
+Controls API request volumes to prevent abuse.
+5. SEO and Accessibility:
+SEO Optimization:
+
+Uses semantic HTML elements, meta tags, and descriptions for improved search engine visibility.
