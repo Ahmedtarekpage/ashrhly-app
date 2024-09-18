@@ -1,13 +1,86 @@
 {% extends "base.html" %}
 
-{% block title %}Welcome{% endblock %}
+{% block title %}مرحبا بك{% endblock %}
 
 {% block content %}
 <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Ashrhly</h1>
-    <p class="text-xl mb-8">Learn complex concepts in simplified Egyptian Arabic</p>
-    <a href="{{ url_for('register') }}" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-2 px-4 rounded">
-        Get Started
-    </a>
+    <!-- Hero Section -->
+    <section class="bg-yellow-400 py-20">
+        <h1 class="text-4xl font-bold mb-4">مرحبا بك في اشرحلي</h1>
+        <p class="text-xl mb-8">اتعلم المفاهيم الصعبة بالعربي المصري البسيط</p>
+        <a href="{{ url_for('register') }}" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+            ابدأ دلوقتي
+        </a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16">
+        <h2 class="text-3xl font-bold mb-8">ليه تستخدم اشرحلي؟</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded shadow-md">
+                <h3 class="text-xl font-bold mb-4">شرح بسيط</h3>
+                <p>نبسطلك المفاهيم الصعبة بطريقة سهلة وممتعة</p>
+            </div>
+            <div class="bg-white p-6 rounded shadow-md">
+                <h3 class="text-xl font-bold mb-4">باللهجة المصرية</h3>
+                <p>نشرحلك بلغتك عشان تفهم بسرعة وسهولة</p>
+            </div>
+            <div class="bg-white p-6 rounded shadow-md">
+                <h3 class="text-xl font-bold mb-4">متاح في أي وقت</h3>
+                <p>اسأل وقت ما تحب واحنا هنجاوبك على طول</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="bg-gray-200 py-16">
+        <h2 class="text-3xl font-bold mb-8">الاشتراكات</h2>
+        <div class="bg-white p-6 rounded shadow-md max-w-md mx-auto">
+            <h3 class="text-2xl font-bold mb-4">الاشتراك الشهري</h3>
+            <p class="text-4xl font-bold mb-4">100 جنيه / شهر</p>
+            <ul class="text-left mb-6">
+                <li class="mb-2">✓ شرح غير محدود</li>
+                <li class="mb-2">✓ دعم على مدار الساعة</li>
+                <li class="mb-2">✓ مواضيع متنوعة</li>
+            </ul>
+            <a href="{{ url_for('register') }}" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-2 px-4 rounded block w-full text-center">
+                اشترك دلوقتي
+            </a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16">
+        <h2 class="text-3xl font-bold mb-8">آراء المستخدمين</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded shadow-md">
+                <p class="mb-4">"اشرحلي ساعدني كتير في فهم المواد الصعبة. الشرح بسيط وسهل الفهم."</p>
+                <p class="font-bold">- أحمد، طالب ثانوية عامة</p>
+            </div>
+            <div class="bg-white p-6 rounded shadow-md">
+                <p class="mb-4">"أخيرا لاقيت منصة بتشرح بالمصري! سهل أوي أفهم الدروس كده."</p>
+                <p class="font-bold">- سارة، طالبة جامعية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-200 py-16">
+        <h2 class="text-3xl font-bold mb-8">الأسئلة الشائعة</h2>
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-white p-6 rounded shadow-md mb-4">
+                <h3 class="font-bold mb-2">إزاي أستخدم اشرحلي؟</h3>
+                <p>بس سجل حساب، واكتب السؤال اللي عايز تفهمه، وهتلاقي الشرح على طول!</p>
+            </div>
+            <div class="bg-white p-6 rounded shadow-md mb-4">
+                <h3 class="font-bold mb-2">هل ممكن أجرب الخدمة قبل الاشتراك؟</h3>
+                <p>أيوة، فيه فترة تجريبية 5 أيام مجانية عشان تشوف إزاي الخدمة بتشتغل.</p>
+            </div>
+            <div class="bg-white p-6 rounded shadow-md">
+                <h3 class="font-bold mb-2">أقدر أسأل عن أي حاجة؟</h3>
+                <p>طبعا! اسأل في أي موضوع أو مادة دراسية وهنحاول نساعدك.</p>
+            </div>
+        </div>
+    </section>
 </div>
 {% endblock %}

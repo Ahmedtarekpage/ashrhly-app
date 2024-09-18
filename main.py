@@ -32,7 +32,7 @@ def register():
         new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
-        flash('Registration successful. Please log in.', 'success')
+        flash('تم التسجيل بنجاح. من فضلك قم بتسجيل الدخول.', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
@@ -45,7 +45,7 @@ def login():
             login_user(user, remember=form.remember.data)
             return redirect(url_for('dashboard'))
         else:
-            flash('Invalid email or password', 'error')
+            flash('البريد الإلكتروني أو كلمة المرور غير صحيحة', 'error')
     return render_template('login.html', form=form)
 
 @app.route('/logout')
@@ -64,7 +64,7 @@ def dashboard():
 def explain():
     topic = request.json.get('topic')
     if not topic:
-        return jsonify({'error': 'No topic provided'}), 400
+        return jsonify({'error': 'لم يتم تقديم موضوع'}), 400
 
     prompt = f"اشرح لمراهقين {topic} بالمصريه العاميه و يكون مبسط ليهم علشان يقدروا يفهموا المبدا الصعب ده"
     try:
@@ -80,7 +80,7 @@ def subscribe():
     # For simplicity, we'll just set the user as subscribed
     current_user.subscribed = True
     db.session.commit()
-    return jsonify({'message': 'Subscription successful'})
+    return jsonify({'message': 'تم الاشتراك بنجاح'})
 
 if __name__ == '__main__':
     with app.app_context():
