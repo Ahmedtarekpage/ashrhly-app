@@ -6,79 +6,96 @@
 <div class="text-center">
     <!-- Hero Section -->
     <section class="bg-yellow-400 py-20">
-        <h1 class="text-4xl font-bold mb-4">مرحبا بك في اشرحلي</h1>
-        <p class="text-xl mb-8">اتعلم المفاهيم الصعبة بالعربي المصري البسيط</p>
-        <a href="{{ url_for('register') }}" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-            ابدأ دلوقتي
-        </a>
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-4">مرحبا بك في اشرحلي</h1>
+            <p class="text-xl mb-8">اتعلم المفاهيم الصعبة بالعربي المصري البسيط</p>
+            <a href="{{ url_for('register') }}" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                <i class="fas fa-rocket mr-2"></i>ابدأ دلوقتي
+            </a>
+            <img src="{{ url_for('static', filename='img/hero-image.jpg') }}" alt="طلاب يتعلمون" class="mt-8 mx-auto rounded-lg shadow-lg" style="max-width: 600px;">
+        </div>
     </section>
 
     <!-- Features Section -->
     <section class="py-16">
-        <h2 class="text-3xl font-bold mb-8">ليه تستخدم اشرحلي؟</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded shadow-md">
-                <h3 class="text-xl font-bold mb-4">شرح بسيط</h3>
-                <p>نبسطلك المفاهيم الصعبة بطريقة سهلة وممتعة</p>
-            </div>
-            <div class="bg-white p-6 rounded shadow-md">
-                <h3 class="text-xl font-bold mb-4">باللهجة المصرية</h3>
-                <p>نشرحلك بلغتك عشان تفهم بسرعة وسهولة</p>
-            </div>
-            <div class="bg-white p-6 rounded shadow-md">
-                <h3 class="text-xl font-bold mb-4">متاح في أي وقت</h3>
-                <p>اسأل وقت ما تحب واحنا هنجاوبك على طول</p>
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">ليه تستخدم اشرحلي؟</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded shadow-md">
+                    <i class="fas fa-lightbulb text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">شرح بسيط</h3>
+                    <p>نبسطلك المفاهيم الصعبة بطريقة سهلة وممتعة</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-md">
+                    <i class="fas fa-comments text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">باللهجة المصرية</h3>
+                    <p>نشرحلك بلغتك عشان تفهم بسرعة وسهولة</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-md">
+                    <i class="fas fa-clock text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">متاح في أي وقت</h3>
+                    <p>اسأل وقت ما تحب واحنا هنجاوبك على طول</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
     <section class="bg-gray-200 py-16">
-        <h2 class="text-3xl font-bold mb-8">الاشتراكات</h2>
-        <div class="bg-white p-6 rounded shadow-md max-w-md mx-auto">
-            <h3 class="text-2xl font-bold mb-4">الاشتراك الشهري</h3>
-            <p class="text-4xl font-bold mb-4">100 جنيه / شهر</p>
-            <ul class="text-left mb-6">
-                <li class="mb-2">✓ شرح غير محدود</li>
-                <li class="mb-2">✓ دعم على مدار الساعة</li>
-                <li class="mb-2">✓ مواضيع متنوعة</li>
-            </ul>
-            <a href="{{ url_for('register') }}" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-2 px-4 rounded block w-full text-center">
-                اشترك دلوقتي
-            </a>
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">الاشتراكات</h2>
+            <div class="bg-white p-6 rounded shadow-md max-w-md mx-auto">
+                <i class="fas fa-gem text-4xl text-yellow-400 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-4">الاشتراك الشهري</h3>
+                <p class="text-4xl font-bold mb-4">100 جنيه / شهر</p>
+                <ul class="text-left mb-6">
+                    <li class="mb-2"><i class="fas fa-check text-green-500 mr-2"></i>شرح غير محدود</li>
+                    <li class="mb-2"><i class="fas fa-check text-green-500 mr-2"></i>دعم على مدار الساعة</li>
+                    <li class="mb-2"><i class="fas fa-check text-green-500 mr-2"></i>مواضيع متنوعة</li>
+                </ul>
+                <a href="{{ url_for('register') }}" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-2 px-4 rounded block w-full text-center">
+                    <i class="fas fa-sign-in-alt mr-2"></i>اشترك دلوقتي
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
     <section class="py-16">
-        <h2 class="text-3xl font-bold mb-8">آراء المستخدمين</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded shadow-md">
-                <p class="mb-4">"اشرحلي ساعدني كتير في فهم المواد الصعبة. الشرح بسيط وسهل الفهم."</p>
-                <p class="font-bold">- أحمد، طالب ثانوية عامة</p>
-            </div>
-            <div class="bg-white p-6 rounded shadow-md">
-                <p class="mb-4">"أخيرا لاقيت منصة بتشرح بالمصري! سهل أوي أفهم الدروس كده."</p>
-                <p class="font-bold">- سارة، طالبة جامعية</p>
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">آراء المستخدمين</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded shadow-md">
+                    <img src="{{ url_for('static', filename='img/user1.jpg') }}" alt="أحمد" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <p class="mb-4">"اشرحلي ساعدني كتير في فهم المواد الصعبة. الشرح بسيط وسهل الفهم."</p>
+                    <p class="font-bold">- أحمد، طالب ثانوية عامة</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-md">
+                    <img src="{{ url_for('static', filename='img/user2.jpg') }}" alt="سارة" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <p class="mb-4">"أخيرا لاقيت منصة بتشرح بالمصري! سهل أوي أفهم الدروس كده."</p>
+                    <p class="font-bold">- سارة، طالبة جامعية</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="bg-gray-200 py-16">
-        <h2 class="text-3xl font-bold mb-8">الأسئلة الشائعة</h2>
-        <div class="max-w-2xl mx-auto">
-            <div class="bg-white p-6 rounded shadow-md mb-4">
-                <h3 class="font-bold mb-2">إزاي أستخدم اشرحلي؟</h3>
-                <p>بس سجل حساب، واكتب السؤال اللي عايز تفهمه، وهتلاقي الشرح على طول!</p>
-            </div>
-            <div class="bg-white p-6 rounded shadow-md mb-4">
-                <h3 class="font-bold mb-2">هل ممكن أجرب الخدمة قبل الاشتراك؟</h3>
-                <p>أيوة، فيه فترة تجريبية 5 أيام مجانية عشان تشوف إزاي الخدمة بتشتغل.</p>
-            </div>
-            <div class="bg-white p-6 rounded shadow-md">
-                <h3 class="font-bold mb-2">أقدر أسأل عن أي حاجة؟</h3>
-                <p>طبعا! اسأل في أي موضوع أو مادة دراسية وهنحاول نساعدك.</p>
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">الأسئلة الشائعة</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white p-6 rounded shadow-md mb-4">
+                    <h3 class="font-bold mb-2"><i class="fas fa-question-circle text-yellow-400 mr-2"></i>إزاي أستخدم اشرحلي؟</h3>
+                    <p>بس سجل حساب، واكتب السؤال اللي عايز تفهمه، وهتلاقي الشرح على طول!</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-md mb-4">
+                    <h3 class="font-bold mb-2"><i class="fas fa-question-circle text-yellow-400 mr-2"></i>هل ممكن أجرب الخدمة قبل الاشتراك؟</h3>
+                    <p>أيوة، فيه فترة تجريبية 5 أيام مجانية عشان تشوف إزاي الخدمة بتشتغل.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-md">
+                    <h3 class="font-bold mb-2"><i class="fas fa-question-circle text-yellow-400 mr-2"></i>أقدر أسأل عن أي حاجة؟</h3>
+                    <p>طبعا! اسأل في أي موضوع أو مادة دراسية وهنحاول نساعدك.</p>
+                </div>
             </div>
         </div>
     </section>
