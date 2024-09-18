@@ -12,7 +12,7 @@
             <a href="{{ url_for('register') }}" class="bg-white hover:bg-gray-100 text-blue-500 font-bold py-3 px-6 rounded-full transition duration-300 hover-grow">
                 <i class="fas fa-rocket mr-2"></i>ابدأ دلوقتي
             </a>
-            <img src="{{ url_for('static', filename='img/hero-image.jpg') }}" alt="طلاب يتعلمون" class="mt-12 mx-auto rounded-lg shadow-xl" style="max-width: 600px;">
+            <img data-src="{{ url_for('static', filename='img/hero-image.jpg') }}" alt="طلاب يتعلمون" class="mt-12 mx-auto rounded-lg shadow-xl lazy-load" style="max-width: 600px;">
         </div>
     </section>
 
@@ -66,12 +66,12 @@
             <h2 class="text-3xl font-bold mb-12">آراء المستخدمين</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="bg-white p-8 rounded-lg shadow-md hover-grow">
-                    <img src="{{ url_for('static', filename='img/user1.jpg') }}" alt="أحمد" class="w-24 h-24 rounded-full mx-auto mb-6">
+                    <img data-src="{{ url_for('static', filename='img/user1.jpg') }}" alt="أحمد" class="w-24 h-24 rounded-full mx-auto mb-6 lazy-load">
                     <p class="mb-6">"اشرحلي ساعدني كتير في فهم المواد الصعبة. الشرح بسيط وسهل الفهم."</p>
                     <p class="font-bold">- أحمد، طالب ثانوية عامة</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-md hover-grow">
-                    <img src="{{ url_for('static', filename='img/user2.jpg') }}" alt="سارة" class="w-24 h-24 rounded-full mx-auto mb-6">
+                    <img data-src="{{ url_for('static', filename='img/user2.jpg') }}" alt="سارة" class="w-24 h-24 rounded-full mx-auto mb-6 lazy-load">
                     <p class="mb-6">"أخيرا لاقيت منصة بتشرح بالمصري! سهل أوي أفهم الدروس كده."</p>
                     <p class="font-bold">- سارة، طالبة جامعية</p>
                 </div>
